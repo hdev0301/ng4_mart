@@ -1,0 +1,43 @@
+<!-- start top brands  section -->
+<section class="top-brand hidden-sm hidden-xs" *ngIf="top_brands">
+  <div class="container">
+    <div class="brand-container row">
+      <h3><span>top brands</span> <a routerLink="/brands/all" class="right-link">view all brands <i class="fa fa-angle-right"></i></a></h3>
+      <div class="brands">
+        <div class="ing-cont" *ngFor="let brand of top_brands"><a *ngIf="brand.slug" [routerLink]="['/brands', brand.slug]"  (click)="setBrand(brand)"><img src="{{brand.brand_image}}" class="img-responsive"alt="{{brand.label}}" /></a></div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- end top brands  section -->
+
+
+<!-- brands section -->
+<section class="deals visible-xs visible-sm brands" *ngIf="top_brands">
+  <div class="container">
+    <div class="title-div">
+      <div class="title">
+        <div class="line"></div>
+        <div class="text">Top brands</div>
+        <div class="line"></div>
+      </div>
+    </div>
+    <div class="row" >
+      <div class="deals-sliders">
+                <!-- start products slider div -->
+                <swiper [config]="config">
+                  <div class="swiper-wrapper">
+                      <!-- display slider banners here-->
+                      <div class="swiper-slide" *ngFor="let brand of top_brands">
+                          <br>
+                          <a target="_blank" [href]="brand.url"><img class="swiper-slide"  [src]="brand.brand_image"></a>
+                      </div>
+                  </div>
+                  <!-- Add Pagination -->
+                  <br> <br>
+                  <div class="swiper-pagination"></div>
+              </swiper>
+      </div>
+    </div>
+  </div>
+</section>

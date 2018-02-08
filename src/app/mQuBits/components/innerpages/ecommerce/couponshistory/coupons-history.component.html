@@ -1,0 +1,74 @@
+<div class="livecoupon-container">
+    <div id="livecoupon-title" class="livecoupon-title"></div>
+    <div id="countdown-div" class="countdown-div">
+        <div class="time-div">
+            <p id="days" class="time"></p>
+            <p class="time">:</p>
+            <p id="hours" class="time"></p>
+            <p class="time">:</p>
+            <p id="minutes" class="time"></p>
+            <p class="time">:</p>
+            <p id="seconds" class="time"></p>
+        </div>
+        <div class="time-div">
+            <p class="time">Days</p>
+            <p class="time">Hrs</p>
+            <p class="time">Mins</p>
+            <p class="time">Secs</p>
+        </div>
+        <div class="progress-bar-div">
+            <div class="progress progress-div">
+                <div id="progress-id" class="progress-bar progress-bar-danger progress-bar-striped active" role="progressbar">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="livecoupon-code-div" class="livecoupon-code-div">
+        <p class="abovecode-text">Here's Your Code</p>
+        <p id="livecoupon-code" class="livecoupon-code"></p>
+        <div class="livecopy-button-div">
+            <button class="livecopy-button">Copy code</button>
+        </div>
+        <p>terms and conditions apply</p>
+    </div>
+    <div id="terms-div" class="terms-div">
+        <div id="terms" class="terms">
+            Terms and conditions
+        </div>
+        <ol class="list-of-conditions">
+            <li>Maximum discounted weight is 3 Kgs</li>
+            <li>Offer ends while quantity lasts or on Wednesday, 23th of August 2017 at 23:59:59.</li>
+            <li>Max payment date when offer claimed Thursday, 31th of August 2017 at 23:59:59.</li>
+            <li>Only one coupon can be issued per person per account.</li>
+            <li>Coupons are limited.</li>
+            <li>Customers can replace the canceled items after the purchasing with the same amount.</li>
+        </ol>
+    </div>
+</div>
+<div id="coupons" class="container">
+    <div class="row">
+        <div *ngFor="let coupon of coupons" id="coupon" class="col-xs-3 single-coupon-container">
+            <div class="single-coupon">
+                <div id="coupon-first-section" class="coupon-first-section">
+                    <img id="coupon-banner" class="coupon-banner" src="../../../../../assets/images/banners/coupon.png">
+                    <p class="off-percentage">50%</p>
+                    <p id="coupon-title" class="coupon-title">
+                        {{coupon.discription}}
+                    </p>
+                    <p style="margin:0;">__Use Code__</p>
+                    <div class="div-code">
+                        <p class="code">{{coupon.code}}</p>
+                    </div>
+                    <p id="coupon-expire-date" class="coupon-expire-date">
+                        Expires: {{coupon.end_date}}
+                    </p>
+                    <div class="row coupon-button-div">
+                        <button id="coupon-button" class="coupon-button">View Details</button>
+                        <button id="copy-button" class="copy-button">Copy code</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>

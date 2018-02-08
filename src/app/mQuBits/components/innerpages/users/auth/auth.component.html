@@ -1,0 +1,125 @@
+<div class="container" id="reg-box">
+    <div class="row padding-0">
+
+        <!-- SIgn in form-->
+        <form [formGroup]="loginForm" (ngSubmit)="onLoginSubmit()" novalidate class="col-lg-5 col-md-5 col-sm-10 col-xs-10">
+
+            <div class="input-group">
+                <h3 class="header-txt">WELCOME TO MARTMAX </h3>
+            </div>
+
+            <!-- email -->
+            <div class="input-group">
+                <span class="input-group-addon">
+                    <i class="glyphicon glyphicon-user"></i>
+                </span>
+                <input formControlName="email" type="email" placeholder="Email" class="form-control frm-ctrl" />
+                <div *ngIf="formErrors && formErrors.email" class="alert alert-danger">
+                    {{ formErrors.email }}
+                </div>
+            </div>
+
+            <!-- password -->
+            <div class="input-group">
+                <span class="input-group-addon">
+                    <i class="glyphicon glyphicon-lock"></i>
+                </span>
+                <input formControlName="password" type="password" placeholder="password" class="form-control frm-ctrl">
+                <div *ngIf="formErrors && formErrors.password" class="alert alert-danger">
+                    {{ formErrors.password }}
+                </div>
+            </div>
+
+            <label class="checkbox-inline">
+                <input type="checkbox" value="">Remember me
+            </label>
+
+            <div class="form-group">
+                <div class="center-block  text-center">
+                    <button type="submit" class="btn  signIn pull-left btn-top">Sign in</button>
+                    <span>
+                        <a href="#" class="forgot-txt">Forgot your password ?</a>
+                    </span>
+                </div>
+            </div>
+
+            <div class="login-or">
+                <hr class="hr-or">
+                <span class="span-or">or</span>
+            </div>
+
+            <div class="row">
+                <div class="col-xs-6 col-sm-6 col-md-6">
+                    <a href="#" class="btn btn-block fb-social-btn">
+                        <i class="fa fa-facebook" aria-hidden="true"></i>
+                        Facebook</a>
+                </div>
+                <div class="col-xs-6 col-sm-6 col-md-6">
+                    <a href="#" class="btn btn-block g-social-btn">
+                        <i class="fa fa-google-plus" aria-hidden="true"></i>
+                        Google</a>
+                </div>
+            </div>
+
+
+        </form>
+
+        <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2"></div>
+
+        <!-- sign up form-->
+
+        <form [formGroup]="registerForm" (ngSubmit)="onRegisterSubmit()" novalidate class="col-lg-5 col-md-5 col-sm-10 col-xs-10">
+            <div class="input-group">
+                <h3 class="header-txt">NEW TO MARTMAX </h3>
+            </div>
+
+            <div class="input-group">
+                <span class="input-group-addon">
+                    <i>*</i>
+                </span>
+                <input type="email" placeholder="Email" class="form-control frm-ctrl" formControlName="email" />
+                <div *ngIf="registerFormErrors && registerFormErrors.email" class="alert alert-danger">
+                    {{ registerFormErrors.email }}
+                </div>
+            </div>
+
+
+            <div class="input-group">
+                <span class="input-group-addon">
+                    <i>*</i>
+                </span>
+                <input type="password" placeholder="password" class="form-control frm-ctrl" formControlName="password" />
+                <div *ngIf="registerFormErrors && registerFormErrors.password" class="alert alert-danger">
+                    {{ registerFormErrors.password }}
+                </div>
+            </div>
+
+            <div class="input-group">
+                <span class="input-group-addon">
+                    <i>*</i>
+                </span>
+                <input type="password" placeholder="confirm password" formControlName="confirmPassword" class="form-control frm-ctrl" />
+                <div *ngIf="registerFormErrors && registerFormErrors.confirmPassword" class="alert alert-danger">
+                    {{ registerFormErrors.confirmPassword }}
+                </div>
+            </div> 
+
+            <label class="checkbox-inline">
+                <input type="checkbox" value="">Subscribe to our newsletter
+            </label>
+
+            <label class="checkbox-inline">
+                <input type="checkbox" value="">I agree to the
+                <a href="#">Privacy Policy</a> and
+                <a href="#">Terms & Conditions</a>
+            </label>
+
+            <div class="form-group">
+                <div class="center-block  text-center">
+                    <button type="submit" class="btn  signUp pull-left btn-top">Sign up</button>
+                </div>
+            </div>
+        </form>
+    </div>
+
+</div>

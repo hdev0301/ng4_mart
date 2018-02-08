@@ -1,0 +1,76 @@
+img{
+    padding:5px; 
+    height:13em;
+    width: 13em;
+}
+
+.offer
+{
+    background-color: red;
+    border-radius:none;
+    position: absolute;
+    top:30px;
+    text-align: center;
+    color:white;
+}
+
+.mo-add-btn
+{
+    background: none;
+    border: 1.5px solid #4492F7;
+    border-radius: 5px;
+    color: #4492F7;
+    width: 90%;
+}
+
+.mo-add-btn:hover
+{
+    background-color: #4492F7;
+    border: 1.5px solid lightgrey;
+    border-radius: 5px;
+    color: white;
+    width: 90%;
+}
+
+.mo-item-title
+{
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 25ch;
+}
+
+.mo-new-price
+{
+    color: #4492F7;
+     font-weight:bold;
+}
+
+.mo-old-price
+{
+color: gray;
+}
+
+.mo-add-btn-in-cart 
+{
+    background-color: green;
+    border: 1.5px solid lightgrey;
+    border-radius: 5px;
+    color:white;
+}
+
+.martmax-product
+{
+padding: 1em;
+}
+
+ .mo-product-img
+ {
+     max-width: 10em;
+     max-height: 10em;
+ }
+
+ .mo-item-brand
+ {
+     color: red;
+ }

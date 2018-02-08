@@ -1,0 +1,61 @@
+<!-- how it works -->
+<div class="container how-it-works-content hidden-xs">
+    <div class="row text-center">
+        <div class="how-it-works-txt">How it works</div>
+        <div class="col-sm-3 col-xs-6">
+            <div class="panel-body">
+                <p class="select-image center-block how-it-works-image"></p>
+            </div>
+            <div class="gradient how-it-works-btn how-it-works-btn-size btn center-block selected-btn tablinks" (click)="howitworks($event,'select')">Select you item</div>
+        </div>
+        <div class="col-sm-3 col-xs-6">
+            <div class="panel-body">
+                <p class="calculate-image center-block how-it-works-image"></p>
+            </div>
+            <div class="how-it-works-btn how-it-works-btn-size btn center-block tablinks" (click)="howitworks($event,'calculate')">Calculate cost</div>
+        </div>
+        <div class="col-sm-3 col-xs-6">
+            <div class="panel-body">
+                <p class="pay-image center-block how-it-works-image"></p>
+            </div>
+            <div class="how-it-works-btn how-it-works-btn-size btn center-block tablinks" (click)="howitworks($event,'pay')">Order & Pay</div>
+        </div>
+        <div class="col-sm-3 col-xs-6">
+            <div class="panel-body">
+                <p class="deliver-image center-block how-it-works-image"></p>
+            </div>
+            <div class="how-it-works-btn how-it-works-btn-size btn center-block tablinks" (click)="howitworks($event,'deliver')">Get it Delivered</div>
+        </div>
+    </div>
+</div>
+
+<!-- how it works content-->
+<div id="select" class="container-fluid text-center how-it-works-block hidden-xs">
+    <p>here you can select an order from other sits such as </p>
+    <ul class="list list-unstyled list-inline">
+        <li class="how-it-works-brand">
+            <p class="amazon-logo center-block"></p>
+        </li>
+        <li class="how-it-works-brand">
+            <p class="ebay-logo center-block"></p>
+        </li>
+        <li class="how-it-works-brand">
+            <p class="ali-logo center-block"></p>
+        </li>
+    </ul>
+</div>
+
+<div id="calculate" class="container-fluid text-center how-it-works-block tabcontent hide-content hidden-xs">
+    content comes here one
+</div>
+
+<div id="pay" class="container-fluid text-center how-it-works-block tabcontent hide-content hidden-xs">
+    content comes here two
+</div>
+
+<div id="deliver" class="container-fluid text-center how-it-works-block tabcontent hide-content hidden-xs">
+    content comes here three
+</div>
+
+
+

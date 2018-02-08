@@ -1,0 +1,24 @@
+/* become a premium*/
+.become-a-premium
+{
+    margin: 0;
+    padding: 3em;
+    color: white;
+    padding-bottom: 1em;
+    background: -webkit-linear-gradient(left, #403B4A , #E7E9BB); 
+    background: -o-linear-gradient(right, #403B4A, #E7E9BB);
+    background: -moz-linear-gradient(right, #403B4A, #E7E9BB); 
+    background: linear-gradient(to right, #403B4A , #E7E9BB);
+}
+
+.become-a-premium-btn
+{
+    background-color: orange;
+    border-radius: 10px;
+    font-weight: bold;
+}
+
+.clr
+{
+    color: white;
+}

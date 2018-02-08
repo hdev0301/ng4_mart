@@ -1,0 +1,525 @@
+<!-- start section new order header -->
+<section class="order-header">
+    <img src="./assets/images/buy.png" class="img-responsive baner" />
+</section>
+<!-- end section new order header -->
+
+<!-- start section search part -->
+<section class="search-part">
+    <div class="container">
+        <div class="text-right find-item">
+            <div class="help text-left">
+            </div>
+
+            <div class="cmxform" id="commentForm" method="get" action="">
+                <div class="row">
+                    <div class="col-xs-10">
+                        <form [formGroup]="scrapForm" (ngChange)="ngOnChanges()" novalidate>
+                            <input type="url" id="curl" class="form-control" placeholder="Paste Link URL Here" formControlName="url" />
+                        </form>
+                        <div *ngIf="errors" class="alert alert-info pull-left">
+                            *{{ errors | json }}
+                        </div>
+                    </div>
+                    <button type="submit" class="btn tn-default col-xs-2">
+                        <i class="fa fa-search"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div class="help">
+            <p>Copy links item</p>
+            <div class="ways text-center">
+                <h3>How it works Easy, safe and fast</h3>
+                <div class="how-to text-center">
+                    <img src="./assets/images/buy1.jpg" class="img-responsive">
+                    <h5>Add your products Copy from a brand then paste a URL</h5>
+                </div>
+                <div class="arrow">
+                    <img src="./assets/images/arrow.png" class="img-responsive">
+                </div>
+                <div class="how-to text-center">
+                    <img src="./assets/images/buy2.jpg" class="img-responsive">
+                    <h5>Calculate Shipping We all calculate aprrox. how much you'll pay</h5>
+                </div>
+                <div class="arrow">
+                    <img src="./assets/images/arrow.png" class="img-responsive">
+                </div>
+                <div class="how-to text-center">
+                    <img src="./assets/images/buy3.jpg" class="img-responsive">
+                    <h5>We Will Buy For You Just pay your order and we will buy it on your behalf</h5>
+                </div>
+                <div class="arrow">
+                    <img src="./assets/images/arrow.png" class="img-responsive">
+                </div>
+                <div class="how-to text-center">
+                    <img src="./assets/images/buy4.jpg" class="img-responsive">
+                    <h5>Order Arrive to Egypt Office We won’t hassle you! We will set everything to make your order ready</h5>
+                </div>
+                <div class="arrow">
+                    <img src="./assets/images/arrow.png" class="img-responsive">
+                </div>
+                <div class="how-to text-center">
+                    <img src="./assets/images/buy5.jpg" class="img-responsive">
+                    <h5>Then Delivered To Your Doorstep Our runner is always ready to deliver your order to you</h5>
+                </div>
+            </div>
+            <div class="hash"></div>
+        </div>
+
+    </div>
+</section>
+<!-- end section search part -->
+<!-- start section item of the llink -->
+<section class="link-item searched">
+    <div class="container">
+        <form [formGroup]="itemForm" (ngSubmit)="onSubmit()" novalidate>
+            <div class="item row" *ngIf="item">
+                <div class="col-xs-2">
+                    <img [src]="item.images.large.url" class="img-responsive" alt="Image may be not found :(" />
+                </div>
+                <div class="col-xs-10">
+                    <h3 [innerHTML]="item.title"></h3>
+                    <h6>
+                        <a [href]="item.url" target="_blank">{{item.url}}</a>
+                    </h6>
+                    <div class="row">
+
+                        <div class="col-sm-3 col-xs-6" *ngIf="item.category">
+                            <label>category</label>
+                            <div class="input cat-med">
+                                <span>{{item.category}}</span>
+                                <i class="fa fa-angle-down"></i>
+                            </div>
+                        </div>
+
+                        <div class="col-sm-3 col-xs-6" *ngIf="!item.category">
+                            <label>category</label>
+                            <div class="input cat-med" data-toggle="modal" data-target="#categoryModal">
+                                <span>select category</span>
+                                <i class="fa fa-angle-down"></i>
+                            </div>
+                        </div>
+
+                        <div class="col-sm-3 col-xs-6" *ngIf="item.offer_price.new">
+                            <label> Price ($)</label>
+                            <div class="input cat-med">
+                                    <span [innerHTML]="item.offer_price.new" formControlName="price"></span>                                   
+                            </div>
+                        </div>
+
+                        <div class="col-sm-3 col-xs-6" *ngIf="!item.offer_price.new">
+                            <label> Price ($)</label>
+                            <div class="input">
+                                <input type="text" class="form-control" formControlName="price" required/>
+                                <i class="search"></i>
+                            </div>
+                        </div>
+
+                        <div class="col-sm-3 col-xs-6">
+                            <label>Currency</label>
+                            <div class="input">
+                                <select name="" id="" class="form-control" formControlName="currency">
+                                    <option selected>Select </option>
+                                    <option value="USA">USA</option>
+                                    <option value="UK">UK</option>
+                                    <option value="UAE">UAE</option>
+                                    <option value="FRA">FRA</option>
+                                    <option value="CHN">CHN</option>
+                                </select>
+                                <div *ngIf="itemFormErrors && itemFormErrors.currency" class="alert alert-danger">
+                                    {{ itemFormErrors.currency }}
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-3 col-xs-6">
+                            <label>Qty</label>
+                            <div class="input">
+                                <select name="" id="" class="form-control" formControlName="quantity">
+                                    <option selected>Select </option>
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div *ngIf="itemFormErrors && itemFormErrors.quantity" class="alert alert-danger">
+                            {{ itemFormErrors.quantity }}
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-3  col-xs-6">
+                            <label>Estimated weight KG
+                                <i class="fa fa-info-circle" data-toggle="tooltip" title="Some tooltip text!"></i>
+                            </label>
+                            <div class="input">
+                                <!-- <select name="" id="" class="form-control" requried>
+                                    <option></option>
+                                </select> -->
+                                <input type="text" class="form-control" required />
+                            </div>
+                            <div class="checkbox">
+                                <label>
+                                    <input type="checkbox">don't know weight
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="col-md-3 col-xs-3" *ngIf="item.color">
+                            <label>Color</label>
+                            <div class="input cat-med">
+                                    <span [innerHTML]="item.color" formControlName="color"></span>                                   
+                            </div>
+                        </div>
+
+                        <div class="col-md-3 col-xs-3 " *ngIf="!item.color">
+                            <label>Color</label>
+                            <input type="text " class="form-control " required />
+                        </div>
+
+                        <div class="col-md-3 col-xs-3" *ngIf="item.size">
+                            <label>Size</label>
+                            <div class="input cat-med">
+                                    <span [innerHTML]="item.size" formControlName="size"></span>                                   
+                            </div>
+                        </div>
+
+                        <div class="col-md-3 col-xs-3 " *ngIf="!item.size">
+                            <label>Size</label>
+                            <input type="text " class="form-control " formControlName="quantity" required />
+                        </div>
+
+                        <!-- *ngIf="!item.sizes " -->
+                        <!-- <div class="col-sm-3 col-xs-3 ">
+                            <label>size</label>
+                            <div class="input ">
+                                <input type="text " class="form-control " value="L " required />
+                            </div>
+                        </div> -->
+
+                    </div>
+                    <div class="item-footer ">
+
+                        <a href="# " data-toggle="modal " data-target="#thirdModal ">
+                            <img src="./assets/images/add-notes.png " /> Add Notes & Conditions</a>
+                        <a href="# " data-toggle="modal " data-target="#secondModal ">
+                            <img src="./assets/images/add-coupon.png " /> Add Coupon</a>
+                        <button type="submit " class="btn btn-primary ">Add to cart</button>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</section>
+<!--SECTION ADD TO CART -->
+<section class="add-to-cart ">
+    <div class="container ">
+        <div class="cart-div row ">
+            <div class="col-sm-8 ">
+                <div class="link-item ">
+                    <div class="item row ">
+                        <div class="hide-item text-right ">
+                            <i data-toggle="modal " data-target="#fourthModal " class="fa fa-trash "></i>
+                        </div>
+                        <div class="col-xs-2 ">
+                            <img src="./assets/images/men1.jpg " class="img-responsive " alt=" " />
+                        </div>
+                        <div class="col-xs-10 ">
+                            <h3>ECR4Kids Softzone Foam Big Blocks, Earthtone (7-Piece Set)</h3>
+                            <h6>
+                                <a href="# ">http://www.amazon.com/dp/B06XPLG1DT/ref=twister_dp_update?ie=UTF8&psc=1</a>
+                            </h6>
+                            <ul>
+                                <li>
+                                    <label>category</label>
+                                    <div class="input cat-med ">
+                                        <span>select category</span>
+                                    </div>
+                                </li>
+                                <li>
+                                    <label> Price ($)</label>
+                                    <div class="input ">
+                                        <input type="text " class="form-control " value="200 " required />
+                                        <i class="search "></i>
+                                    </div>
+                                </li>
+                                <li>
+                                    <label>Qty</label>
+                                    <div class="input ">
+                                        <select name=" " id=" " class="form-control " requried>
+                                            <option>1</option>
+                                            <option>2</option>
+                                            <option>3</option>
+                                            <option>4</option>
+                                            <option>5</option>
+                                        </select>
+                                    </div>
+                                </li>
+                                <li>
+                                    <label>Color</label>
+                                    <div class="input ">
+                                        <input type="text " class="form-control " value="black " required />
+                                    </div>
+                                </li>
+                                <li>
+                                    <label>size</label>
+                                    <div class="input ">
+                                        <input type="text " class="form-control " value="L " required />
+                                    </div>
+                                </li>
+                            </ul>
+                            <div class="item-footer ">
+                                <a href="# " data-toggle="modal " data-target="#thirdModal ">
+                                    <img src="./assets/images/add-notes.png " /> Add Notes & Conditions</a>
+                                <a href="# " data-toggle="modal " data-target="#secondModal ">
+                                    <img src="./assets/images/add-coupon.png " /> Add Coupon</a>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-4 price-part ">
+                <h4>buy for me cart</h4>
+                <div class="buy-calc ">
+                    <h3>
+                        <sup>$</sup>70.30</h3>
+                    <ul>
+                        <li>
+                            <span class="name ">Total Products Online Price</span>
+                            <span class="price ">$50</span>
+                        </li>
+                        <li>
+                            <span class="name ">Customs</span>
+                            <span class="price ">$20</span>
+                        </li>
+                        <li>
+                            <span class="name ">VAT on Customs</span>
+                            <span class="price ">$50</span>
+                        </li>
+                        <li>
+                            <span class="name ">martMax fees</span>
+                            <span class="price ">$50</span>
+                        </li>
+                    </ul>
+
+                    <div class="dim ">
+                        <h3>DOMESTIC SHIPPING</h3>
+                        <p>
+                            <strong>
+                                <em>Domestic Shipping Fees</em>
+                            </strong>
+                            <em>
+                                <br>The cost of shipping from the merchant to our US office. We will always review it before
+                                we order from your merchant.</em>
+                        </p>
+                    </div>
+                    <div class="text-center ">
+                        <a href="checkout.html " class="btn btn-primary ">checkout</a>
+                        <a href="cart.html " class="btn btn-success ">view cart</a>
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- modal -->
+<div id="categoryModal " class="modal fade ">
+    <div class="modal-dialog ">
+        <div class="modal-content ">
+            <div class="modal-header ">
+                <button type="button " class="close " data-dismiss="modal " aria-hidden="true ">&times;
+                </button>
+            </div>
+            <div class="modal-body ">
+                <h3>Choose Item Category</h3>
+                <div class="content ">
+                    <p class="head ">
+                        <i class="fa fa-book "></i>books</p>
+                    <span class="tooltiptext ">
+                        <p>box class</p>
+                        <p>6:00 am</p>
+                    </span>
+                </div>
+                <div class="content ">
+                    <p class="head ">
+                        <i class="fa fa-book "></i>clothes/women/man</p>
+                    <span class="tooltiptext ">
+                        <p>clothes </p>
+                        <p>customize 50%</p>
+                    </span>
+                </div>
+                <div class="content ">
+                    <p class="head ">
+                        <i class="fa fa-book "></i>books</p>
+                    <span class="tooltiptext ">
+                        <p>box class</p>
+                        <p>6:00 am</p>
+                    </span>
+                </div>
+                <div class="content ">
+                    <p class="head ">
+                        <i class="fa fa-book "></i>clothes/women/man</p>
+                    <span class="tooltiptext ">
+                        <p>clothes </p>
+                        <p>customize 50%</p>
+                    </span>
+                </div>
+                <div class="content ">
+                    <p class="head ">
+                        <i class="fa fa-book "></i>books</p>
+                    <span class="tooltiptext ">
+                        <p>box class</p>
+                        <p>6:00 am</p>
+                    </span>
+                </div>
+                <div class="content ">
+                    <p class="head ">
+                        <i class="fa fa-book "></i>clothes/women/man</p>
+                    <span class="tooltiptext ">
+                        <p>clothes </p>
+                        <p>customize 50%</p>
+                    </span>
+                </div>
+                <div class="content ">
+                    <p class="head ">
+                        <i class="fa fa-book "></i>books</p>
+                    <span class="tooltiptext ">
+                        <p>box class</p>
+                        <p>6:00 am</p>
+                    </span>
+                </div>
+                <div class="content ">
+                    <p class="head ">
+                        <i class="fa fa-book "></i>clothes/women/man</p>
+                    <span class="tooltiptext ">
+                        <p>clothes </p>
+                        <p>customize 50%</p>
+                    </span>
+                </div>
+                <div class="content ">
+                    <p class="head ">
+                        <i class="fa fa-book "></i>books</p>
+                    <span class="tooltiptext ">
+                        <p>box class</p>
+                        <p>6:00 am</p>
+                    </span>
+                </div>
+                <div class="content ">
+                    <p class="head ">
+                        <i class="fa fa-book "></i>clothes/women/man</p>
+                    <span class="tooltiptext ">
+                        <p>clothes </p>
+                        <p>customize 50%</p>
+                    </span>
+                </div>
+                <div class="content ">
+                    <p class="head ">
+                        <i class="fa fa-book "></i>books</p>
+                    <span class="tooltiptext ">
+                        <p>box class</p>
+                        <p>6:00 am</p>
+                    </span>
+                </div>
+                <div class="content ">
+                    <p class="head ">
+                        <i class="fa fa-book "></i>clothes/women/man</p>
+                    <span class="tooltiptext ">
+                        <p>clothes </p>
+                        <p>customize 50%</p>
+                    </span>
+                </div>
+                <div class="content ">
+                    <p class="head ">
+                        <i class="fa fa-book "></i>books</p>
+                    <span class="tooltiptext ">
+                        <p>box class</p>
+                        <p>6:00 am</p>
+                    </span>
+                </div>
+                <div class="content ">
+                    <p class="head ">
+                        <i class="fa fa-book "></i>clothes/women/man</p>
+                    <span class="tooltiptext ">
+                        <p>clothes </p>
+                        <p>customize 50%</p>
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="secondModal " class="modal fade ">
+    <div class="modal-dialog ">
+        <div class="modal-content ">
+            <div class="modal-header ">
+                <button type="button " class="close " data-dismiss="modal " aria-hidden="true ">&times;
+                </button>
+            </div>
+            <div class="modal-body ">
+                <h3>Enter store coupon</h3>
+                <form action="# " method="post ">
+                    <input type="text " class="form-control ">
+                    <button type="submit " class="btn btn-primary ">SUBMIT COUPON</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="thirdModal " class="modal fade ">
+    <div class="modal-dialog ">
+        <div class="modal-content ">
+            <div class="modal-header ">
+                <button type="button " class="close " data-dismiss="modal " aria-hidden="true ">&times;
+                </button>
+            </div>
+            <div class="modal-body ">
+                <div class="row ">
+                    <div class="col-xs-3 ">
+                        <img src="./assets/images/men1.jpg " class="img-responsive ">
+
+                    </div>
+                    <div class="col-xs-9 ">
+                        <h5>ECR4Kids Softzone Foam Big Blocks, Earthtone (7-Piece Set)</h5>
+                        <span class="category ">book </span>
+                    </div>
+                </div>
+                <h3>Add notes to this item</h3>
+                <form action="# " method="post ">
+                    <textarea class="form-control "></textarea>
+                    <div class="form-group ">
+                        <label>What would you like us to do if an item of your order isn’t available?</label>
+                        <select name=" " id=" " class="form-control " requried>
+                            <option></option>
+                            <option>cancel this item only</option>
+                            <option>cancel the hole order</option>
+                            <option>hold the hole order</option>
+                        </select>
+                    </div>
+                    <button type="submit " class="btn btn-primary ">SUBMIT COUPON</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="fourthModal " class="modal fade ">
+    <div class="modal-dialog ">
+        <div class="modal-content ">
+            <div class="modal-header ">
+                <button type="button " class="close " data-dismiss="modal " aria-hidden="true ">&times;
+                </button>
+            </div>
+            <div class="modal-body ">
+                <h3>Are you Sure U want To delete this item</h3>
+                <button class="btn btn-default ">yes</button>
+                <button class="btn btn-success ">no</button>
+            </div>
+        </div>
+    </div>
+</div>

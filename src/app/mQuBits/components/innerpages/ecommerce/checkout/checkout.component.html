@@ -1,0 +1,443 @@
+<div class="container">
+    <div class="row margin-0">
+        <form [formGroup]="checkoutForm" (ngSubmit)="onSubmit()" novalidate class="col-lg-10 col-md-10">
+                <!-- Billing Information -->
+<p>Billing Information</p>
+                    <div formGroupName="billing" class="form-group">
+                        <!-- Payment Method -->
+                        <div class="form-group">
+                            <div>
+                                <label for="method">Payment Method:*
+                                    <select formControlName="method" class="form-control">
+                                        <option value="cash_collection">Cash Collection</option>
+                                        <option value="cod">Cash on Delivery</option>
+                                        <option value="cc">Credit Card</option>
+                                        <option value="vodafone_cash">Vodafone Cash</option>
+                                    </select>
+                                </label>
+                            </div>
+                            <div *ngIf="formErrors.billing && formErrors.billing.method" class="alert alert-danger">
+                                {{ formErrors.billing.method }}
+                            </div>
+                        </div>
+                        <!-- EOF Payment Method -->
+                        <!-- Credit Card -->
+                        <div formGroupName="creditCard">
+                            <div class="form-group">
+                                <div>
+                                    <label for="pan"> Card Holder:*
+                                        <input formControlName="cardHolderName" class="form-control" />
+                                    </label>
+                                </div>
+                                <div *ngIf="formErrors.billing && formErrors.billing.creditCard && formErrors.billing.creditCard.cardHolderName" class="alert alert-danger">
+                                    {{ formErrors.billing.creditCard.cardHolderName }}
+                                </div>
+                            </div>
+                            <!-- Card Number -->
+                            <div class="form-group">
+                                <div>
+                                    <label for="pan"> Card Number:*
+                                        <input formControlName="pan" class="form-control" />
+                                    </label>
+                                </div>
+                                <div *ngIf="formErrors.billing && formErrors.billing.creditCard && formErrors.billing.creditCard.pan" class="alert alert-danger">
+                                    {{ formErrors.billing.creditCard.pan }}
+                                </div>
+                            </div>
+                            <!-- Card Number -->
+                            <!-- Card PIN -->
+                            <div class="form-group">
+                                <div>
+                                    <label for="pin"> CCV:*
+                                        <input formControlName="pin" class="form-control" />
+                                    </label>
+                                </div>
+                                <div *ngIf="formErrors.billing && formErrors.billing.creditCard && formErrors.billing.creditCard.pin" class="alert alert-danger">
+                                    {{ formErrors.billing.creditCard.pin }}
+                                </div>
+                            </div>
+                            <!-- Card PIN -->
+                            <!-- Expiry Month -->
+                            <div class="form-group">
+                                <div>
+                                    <label for="coupon"> Expiry Month:*
+                                        <input formControlName="expiryMonth" class="form-control" />
+                                    </label>
+                                </div>
+                                <div *ngIf="formErrors.billing && formErrors.billing.creditCard && formErrors.billing.creditCard.expiryMonth" class="alert alert-danger">
+                                    {{ formErrors.billing.creditCard.expiryMonth }}
+                                </div>
+                            </div>
+                            <!-- Expiry Month -->
+                            <!-- Expiry Year -->
+                            <div class="form-group">
+                                <div>
+                                    <label for="expiryYear">Expiry Year:*
+                                        <input formControlName="expiryYear" class="form-control" />
+                                    </label>
+                                </div>
+                                <div *ngIf="formErrors.billing && formErrors.billing.creditCard && formErrors.billing.creditCard.expiryYear" class="alert alert-danger">
+                                    {{ formErrors.billing.creditCard.expiryYear }}
+                                </div>
+                            </div>
+                            <!-- Expiry Year -->
+                        </div>
+                        <!-- EOF Credit Card -->
+                        <!-- Cash -->
+                        <div formGroupName="cash" class="form-group cash-information">
+                            <!-- First Name -->
+                            <div class="form-group">
+                                <div>
+                                    <label for="firstName"> First Name:*</label>
+                                    <input formControlName="firstName" class="form-control" />
+                                </div>
+                                <div *ngIf="formErrors.billing && formErrors.billing.cash && formErrors.billing.cash.firstName" class="alert alert-danger">
+                                    {{ formErrors.billing.cash.firstName }}
+                                </div>
+                            </div>
+                            <!-- EOF First Name -->
+                            <!-- Last Name -->
+                            <div class="form-group">
+                                <div>
+                                    <label for="lastName"> Last Name:*</label>
+                                    <input formControlName="lastName" class="form-control" />
+                                </div>
+                                <div *ngIf="formErrors.billing && formErrors.billing.cash && formErrors.billing.cash.lastName" class="alert alert-danger">
+                                    {{ formErrors.billing.cash.lastName }}
+                                </div>
+                            </div>
+                            <!-- EOF last Name -->
+                            <!-- Email -->
+                            <div class="form-group">
+                                <div>
+                                    <label for="email">Email:*</label>
+                                    <input formControlName="email" class="form-control" />
+                                </div>
+                                <div *ngIf="formErrors.billing && formErrors.billing.cash && formErrors.billing.cash.email" class="alert alert-danger">
+                                    {{ formErrors.billing.cash.email }}
+                                </div>
+                            </div>
+                            <!-- EOF Email -->
+                            <!-- Mobile -->
+                            <div class="form-group">
+                                <div>
+                                    <label for="mobile">Mobile:*</label>
+                                    <input formControlName="mobile" class="form-control" />
+                                </div>
+                                <div *ngIf="formErrors.billing && formErrors.billing.cash && formErrors.billing.cash.mobile" class="alert alert-danger">
+                                    {{ formErrors.billing.cash.mobile }}
+                                </div>
+                            </div>
+                            <!-- EOF Mobile -->
+                            <!-- Apartment -->
+                            <div class="form-group">
+                                <div>
+                                    <label for="apartment"> Apartment:*</label>
+                                    <input formControlName="apartment" class="form-control" />
+                                </div>
+                                <div *ngIf="formErrors.billing && formErrors.billing.cash && formErrors.billing.cash.apartment" class="alert alert-danger">
+                                    {{ formErrors.billing.cash.apartment }}
+                                </div>
+                            </div>
+                            <!-- EOF Apartment -->
+                            <!-- Floor -->
+                            <div class="form-group">
+                                <div>
+                                    <label for="floor">Floor:*</label>
+                                    <input formControlName="floor" class="form-control" />
+                                </div>
+                                <div *ngIf="formErrors.billing && formErrors.billing.cash && formErrors.billing.cash.floor" class="alert alert-danger">
+                                    {{ formErrors.billing.cash.floor }}
+                                </div>
+                            </div>
+                            <!-- EOF Floor -->
+                            <!-- Street -->
+                            <div class="form-group">
+                                <div>
+                                    <label for="street">Street:*</label>
+                                    <input formControlName="street" class="form-control" />
+                                </div>
+                                <div *ngIf="formErrors.billing && formErrors.billing.cash && formErrors.billing.cash.street" class="alert alert-danger">
+                                    {{ formErrors.billing.cash.street }}
+                                </div>
+                            </div>
+                            <!-- EOF Street -->
+                            <!-- District -->
+                            <div class="form-group">
+                                <div>
+                                    <label for="district">District:*</label>
+                                    <input formControlName="district" class="form-control" />
+                                </div>
+                                <div *ngIf="formErrors.billing && formErrors.billing.cash && formErrors.billing.cash.district" class="alert alert-danger">
+                                    {{ formErrors.billing.cash.district }}
+                                </div>
+                            </div>
+                            <!-- EOF District -->
+                            <!-- City -->
+                            <div class="form-group">
+                                <div>
+                                    <label for="city"> City:*</label>
+                                    <input formControlName="city" class="form-control" />
+                                </div>
+                                <div *ngIf="formErrors.billing && formErrors.billing.cash && formErrors.billing.cash.city" class="alert alert-danger">
+                                    {{ formErrors.billing.cash.city }}
+                                </div>
+                            </div>
+                            <!-- EOF City -->
+                            <!-- State -->
+                            <div class="form-group">
+                                <div>
+                                    <label for="state"> State:*</label>
+                                    <input formControlName="state" class="form-control" />
+                                </div>
+                                <div *ngIf="formErrors.billing && formErrors.billing.cash && formErrors.billing.cash.state" class="alert alert-danger">
+                                    {{ formErrors.billing.cash.state }}
+                                </div>
+                            </div>
+                            <!-- EOF State -->
+                            <!-- Country -->
+                            <div class="form-group">
+                                <div>
+                                    <label for="country"> Country:*</label>
+                                    <input formControlName="country" class="form-control" />
+                                </div>
+                                <div *ngIf="formErrors.billing && formErrors.billing.cash && formErrors.billing.cash.country" class="alert alert-danger">
+                                    {{ formErrors.billing.cash.country }}
+                                </div>
+                            </div>
+                            <!-- EOF Country -->
+                        </div>
+                        <!-- EOF Cash Information -->
+                        <!-- Promo Code -->
+                        <div class="form-group">
+                            <div>
+                                <label for="coupon"> Promo Code:*</label>
+                                <input formControlName="coupon" class="form-control" />
+                            </div>
+                            <div *ngIf="formErrors.billing && formErrors.billing.coupon" class="alert alert-danger">
+                                {{ formErrors.billing.coupon }}
+                            </div>
+                        </div>
+                        <!-- Promo Code -->
+                        <!-- Next -->
+                        <div class="form-control">
+                            <div class="xxx">
+                                <input type="button" class="success large" value="Next" />
+                            </div>
+                            <div *ngIf="formErrors.billing && formErrors.billing.summary" class="alert alert-danger">
+                                {{ formErrors.billing.summary }}
+                            </div>
+                        </div>
+                        <!-- EOF Next -->
+                    </div>
+
+                    <!-- EOF Billing Information -->
+
+                    <!-- Shipping Information -->
+                    <div formGroupName="shipping" class="form-group">
+                        <!-- Shipping Method -->
+                        <div class="form-group">
+                            <div>
+                                <label for="method" class="block"> Shipping Method:*</label>
+                                <select formControlName="method" class="form-control">
+                                    <option value="office">Office</option>
+                                    <option value="regular">Regular</option>
+                                    <option value="express">Express</option>
+                                </select>
+                            </div>
+                            <div *ngIf="formErrors.shipping && formErrors.shipping.method" class="alert alert-danger">
+                                {{ formErrors.shipping.method }}
+                            </div>
+                        </div>
+                        <!-- EOF Shipping Method -->
+                        <!-- First Name -->
+                        <div class="form-control">
+                            <div class="xxx">
+                                <label for="firstName" class="block"> First Name:*</label>
+                                <input formControlName="firstName" />
+                            </div>
+                            <div *ngIf="formErrors.shipping && formErrors.shipping.firstName" class="alert alert-danger">
+                                {{ formErrors.shipping.firstName }}
+                            </div>
+                        </div>
+                        <!-- EOF First Name -->
+                        <!-- Last Name -->
+                        <div class="form-control">
+                            <div class="xxx">
+                                <label for="lastName" class="block"> Last Name:*</label>
+                                <input formControlName="lastName" />
+                            </div>
+                            <div *ngIf="formErrors.shipping && formErrors.shipping.lastName" class="alert alert-danger">
+                                {{ formErrors.shipping.lastName }}
+                            </div>
+                        </div>
+                        <!-- EOF last Name -->
+                        <!-- Email -->
+                        <div class="form-control">
+                            <div class="xxx">
+                                <label for="email" class="block"> Email:*</label>
+                                <input formControlName="email" />
+                            </div>
+                            <div *ngIf="formErrors.shipping && formErrors.shipping.email" class="alert alert-danger">
+                                {{ formErrors.shipping.email }}
+                            </div>
+                        </div>
+                        <!-- EOF Email -->
+                        <!-- Mobile -->
+                        <div class="form-control">
+                            <div class="xxx">
+                                <label for="mobile" class="block"> Mobile:*</label>
+                                <input formControlName="mobile" />
+                            </div>
+                            <div *ngIf="formErrors.shipping && formErrors.shipping.mobile" class="alert alert-danger">
+                                {{ formErrors.shipping.mobile }}
+                            </div>
+                        </div>
+                        <!-- EOF Mobile -->
+                        <!-- Apartment -->
+                        <div class="form-control">
+                            <div class="xxx">
+                                <label for="apartment" class="block"> Apartment:*</label>
+                                <input formControlName="apartment" />
+                            </div>
+                            <div *ngIf="formErrors.shipping && formErrors.shipping.apartment" class="alert alert-danger">
+                                {{ formErrors.shipping.apartment }}
+                            </div>
+                        </div>
+                        <!-- EOF Apartment -->
+                        <!-- Floor -->
+                        <div class="form-control">
+                            <div class="xxx">
+                                <label for="floor" class="block"> Floor:*</label>
+                                <input formControlName="floor" />
+                            </div>
+                            <div *ngIf="formErrors.shipping && formErrors.shipping.floor" class="alert alert-danger">
+                                {{ formErrors.shipping.floor }}
+                            </div>
+                        </div>
+                        <!-- EOF Floor -->
+                        <!-- Street -->
+                        <div class="form-control">
+                            <div class="xxx">
+                                <label for="street" class="block"> Street:*</label>
+                                <input formControlName="street" />
+                            </div>
+                            <div *ngIf="formErrors.shipping && formErrors.shipping.street" class="alert alert-danger">
+                                {{ formErrors.shipping.street }}
+                            </div>
+                        </div>
+                        <!-- EOF Street -->
+                        <!-- District -->
+                        <div class="form-control">
+                            <div class="xxx">
+                                <label for="district" class="block"> District:*</label>
+                                <input formControlName="district" />
+                            </div>
+                            <div *ngIf="formErrors.shipping && formErrors.shipping.district" class="alert alert-danger">
+                                {{ formErrors.shipping.district }}
+                            </div>
+                        </div>
+                        <!-- EOF District -->
+                        <!-- City -->
+                        <div class="form-control">
+                            <div class="xxx">
+                                <label for="city" class="block"> City:*</label>
+                                <input formControlName="city" />
+                            </div>
+                            <div *ngIf="formErrors.shipping && formErrors.shipping.city" class="alert alert-danger">
+                                {{ formErrors.shipping.city }}
+                            </div>
+                        </div>
+                        <!-- EOF City -->
+                        <!-- Postal Code -->
+                        <div class="form-control">
+                            <div class="xxx">
+                                <label for="postalCode" class="block"> Postal Code:*</label>
+                                <input formControlName="postalCode" />
+                            </div>
+                            <div *ngIf="formErrors.shipping && formErrors.shipping.postalCode" class="alert alert-danger">
+                                {{ formErrors.shipping.postalCode }}
+                            </div>
+                        </div>
+                        <!-- EOF City -->
+                        <!-- State -->
+                        <div class="form-control">
+                            <div class="xxx">
+                                <label for="state" class="block"> State:*</label>
+                                <input formControlName="state" />
+                            </div>
+                            <div *ngIf="formErrors.shipping && formErrors.shipping.state" class="alert alert-danger">
+                                {{ formErrors.shipping.state }}
+                            </div>
+                        </div>
+                        <!-- EOF State -->
+                        <!-- Country -->
+                        <div class="form-control">
+                            <div class="xxx">
+                                <label for="state" class="block"> Country:*</label>
+                                <input formControlName="country" />
+                            </div>
+                            <div *ngIf="formErrors.shipping && formErrors.shipping.country" class="alert alert-danger">
+                                {{ formErrors.shipping.country }}
+                            </div>
+                        </div>
+                        <!-- EOF Country -->
+                        <!-- Previous -->
+                        <div class="form-control">
+                            <div class="xxx">
+                                <input type="button" class="success large" value="Previous" />
+                            </div>
+                            <div *ngIf="formErrors.shipping && formErrors.shipping.summary" class="alert alert-danger">
+                                {{ formErrors.shipping.summary }}
+                            </div>
+                        </div>
+                        <!-- EOF Previous -->
+                        <!-- Next -->
+                        <div class="form-control">
+                            <div class="xxx">
+                                <input type="button" class="success large" value="Next" />
+                            </div>
+                            <div *ngIf="formErrors.shipping && formErrors.shipping.summary" class="alert alert-danger">
+                                {{ formErrors.shipping.summary }}
+                            </div>
+                        </div>
+                        <!-- EOF Next -->
+                    </div>
+                    <!-- EOF Shipping Information -->
+                    <!-- Order Summary -->
+                    <div formGroupName="products" class="form-group">
+                        <!-- @todo: loop over items in cart -->
+                        <!-- Previous -->
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <div class="xxx">
+                                    <input type="button" class="btn large  btn-primary" value="Previous" />
+                                </div>
+                                <div *ngIf="formErrors && formErrors.summary" class="alert alert-danger">
+                                    {{ formErrors.summary }}
+                                </div>
+                            </div>
+                            <!-- EOF Previous -->
+                            <!-- Next -->
+                            <div class="col-sm-6">
+                                <div>
+                                    <input type="submit" class="btn large btn-primary" value="Checkout" />
+                                </div>
+                                <div *ngIf="formErrors && formErrors.summary" class="alert alert-danger">
+                                    {{ formErrors.summary }}
+                                </div>
+                            </div>
+                            <!-- EOF Next -->
+                        </div>
+                    </div>
+        </form>
+
+        <div class="col-lg-2 col-md-2  panel panel-info total-sum">
+            <span>Order Summary:</span>
+            <b> $ {{ total }} </b>
+            <span *ngIf="result">Processing Results:</span>
+            <b> $ {{ result }} </b>
+        </div>
+
+    </div>
+</div>

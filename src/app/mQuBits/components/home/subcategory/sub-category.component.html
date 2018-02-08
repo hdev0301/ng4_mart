@@ -1,0 +1,115 @@
+<div *ngIf="categories">
+    <section class="category-content  hidden-sm hidden-xs" *ngFor="let category of categories | moLoop">
+        <div class="container" id="category.text">
+            <div class="mean-cats container-cat row" [style.border-top-color]="category.more.color">
+                <div class="row baner2">
+                    <div class="col-md-2 col-sm-3 if-right">
+                        <div class="menu">
+                            <span class="menu-name" [style.color]="category.more.color">{{category.text | MOskipDigits}}
+                                <a href="#">
+                                    <i class="fa fa-angle-right" [style.color]="category.more.color"></i>
+                                </a>
+                            </span>
+                            <ul *ngFor="let chlid of category.children | moLoop">
+                                <li>
+                                    <a href="" [style.color]="category.more.color">{{chlid.text | MOskipDigits}}</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4 slider">
+                        <swiper [config]="config" class="top-banner-swiper">
+                            <div class="swiper-wrapper">
+                                <!-- display slider banners here -->
+                                <div class="swiper-slide" *ngFor="let banner of category.banners.Slider_Banner">
+                                    <div class="slider-img">
+                                        <a *ngIf="banner.banner_image_url" [href]="banner.url">
+                                            <img class="swiper-slide" [src]="(banner.path || banner.banner_image_url)" [alt]="banner.label">
+                                        </a>
+                                        <h2 class="slider-txt text-center" [style.background-color]="category.more.color" *ngIf="banner.label">
+                                            <span class="txt">{{banner.label}}</span>
+                                            <hr>
+                                            <h6 [style.font-weight]="bold">SHOP NOW</h6>
+                                        </h2>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Add Pagination -->
+                            <div class="swiper-pagination"></div>
+                        </swiper>
+                    </div>
+
+                    <div class="col-md-6">
+                        <div class="row">
+                            <div class="col-md-8 border-right shadow" *ngIf="category.banners.Top">
+                                <a [href]="category.banners.Top[0].url">
+                                    <img [src]="category.banners.Top[0].path || category.banners.Top[0].banner_image_url" [alt]="category.banners.Top[0].url"
+                                        class="img-responsive" />
+                                </a>
+                            </div>
+                            <div class="col-md-4 border-bottom top-div shadow" *ngIf="category.banners.One">
+                                <a [href]="category.banners.One[0].url">
+                                    <p class="text-center banner-txt">{{category.banners.One[0].label}}</p>
+                                    <img [src]="( category.banners.One[0].path || category.banners.One[0].banner_image_url )" [alt]="category.banners.One[0].label"
+                                        class="img-responsive" alt="" />
+                                </a>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-4 border-right-top border-bottom shadow" *ngIf="category.banners.Two">
+                                <a [href]="category.banners.Two[0].url" _target="blank">
+                                    <p class="text-center banner-txt">{{category.banners.Two[0].label}}</p>
+                                    <img [src]="(category.banners.Two[0].path || category.banners.Two[0].banner_image_url)" [alt]="category.banners.Two[0].label"
+                                        class="img-responsive" alt="" />
+                                </a>
+                            </div>
+                            <div class="col-md-4 border-right-top border-bottom shadow" *ngIf="category.banners.Three">
+                                <a [href]="category.banners.Three[0].url" _target="blank">
+                                    <p class="text-center banner-txt">{{category.banners.Three[0].label}}</p>
+                                    <img [src]="(category.banners.Three[0].path || category.banners.Three[0].banner_image_url)" [alt]="category.banners.Three[0].label"
+                                        class="img-responsive" alt="" />
+                                </a>
+                            </div>
+                            <div class="col-md-4 border-bottom shadow" *ngIf="category.banners.Four">
+                                <a [href]="category.banners.Four[0].url" _target="blank">
+                                    <p class="text-center banner-txt">{{category.banners.Four[0].label}}</p>
+                                    <img [src]="(category.banners.Four[0].path || category.banners.Four[0].banner_image_url)" [alt]="category.banners.Four[0].label"
+                                        class="img-responsive" alt="" />
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row baner2">
+                    <div class="col-md-6 shadow" *ngIf="category.banners.Bottom_Left">
+                        <a *ngIf="category.banners.Bottom_Left[0].url" [href]="category.banners.Bottom_Left[0].url" _target="blank">
+                            <img [src]="(category.banners.Bottom_Left[0].path || category.banners.Bottom_Left[0].banner_image_url)" [alt]="category.banners.Bottom_Left[0].label"
+                                class="img-responsive ads" alt="" />
+                        </a>
+                    </div>
+                    <div class="col-md-6 shadow" *ngIf="category.banners.Bottom_Right">
+                        <a *ngIf="category.banners.Bottom_Right[0].url" [href]="category.banners.Bottom_Right[0].url" _target="blank">
+                            <img [src]="(category.banners.Bottom_Right[0].path || category.banners.Bottom_Right[0].banner_image_url)" [alt]="category.banners.Bottom_Right[0].label"
+                                class="img-responsive  ads" alt="" />
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="static-menu">
+        <div *ngFor="let category of categories | moLoop" [style.background]="category.more.color">
+            <a [href]="category.text | MOskipDigits" class="r">
+                <img [src]="category.more.icon_url || category.more.url" class="img-responsive" [alt]="" />
+                <!-- @todo category on hover by angular 4 -->
+                <Span [style.color]="white">{{category.text | MOskipDigits}}</Span>
+            </a>
+        </div>
+    </div>
+</div>
+
+<div class="loader-content" *ngIf="! categories">
+    <img class="martmax-logo-loader center-block" src="./assets/images/martmax-small-logo.png">
+</div>

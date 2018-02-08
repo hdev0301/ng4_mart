@@ -1,0 +1,11 @@
+.list-color
+{
+    color: #3e3e3e;
+    background-color: white;
+}
+
+.leftlist li 
+{
+    padding-top:  1em;
+    font-weight: bold;
+}

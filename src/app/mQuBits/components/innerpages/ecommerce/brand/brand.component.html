@@ -1,0 +1,6 @@
+<div *ngIf="brand">
+    <h1 *ngIf="brand.label" [innerHtml]="brand.label"></h1>
+    <div *ngIf="brand.description" [innerHtml]="brand.description"></div>
+    <a *ngIf="brand.url && brand.label" [href]="brand.url" target="_blank" [innerHtml]="brand.label"></a>
+    <a [routerLink]="['/brands/all']">Back to brands</a>
+</div>

@@ -1,0 +1,42 @@
+<!-- @todo : move into component & make dynamic brands -->
+<!-- todo category-->
+<div class="container">
+    <div class="row">
+            <div *ngFor="let item of items" class="col-xs-6 col-sm-6 col-md-4 col-lg-3 martmax-product">
+                    <div class="panel panel-default mo-product-img-size>">
+                        <a [routerLink]="['/products', item.category,item.title,item.url]">
+                        <img [src]="item.images.large.url" class="img-responsive  mo-product-img center-block" alt="image">
+                         </a>
+                        <span *ngIf="item.offer_price && item.offer_price.new && item.offer_price.new.amount" class="offer">
+                                 {{item.offer_price.new.currency}} {{item.offer_price.new.amount}}
+                           </span>
+                    </div>
+    
+                    <div class="row">
+                        <div class="col-sm-9 mo-item-title">
+                            {{item.title}}
+                        </div>
+                        <div class="col-sm-3">
+                            <div class="pull-right mo-item-brand">{{item.store}}</div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div *ngIf="item.offer_price && item.offer_price.new && item.offer_price.new.amount" class="col-sm-6">
+                            <h6 class="mo-new-price"> {{item.offer_price.new.currency}} {{item.offer_price.new.amount}} </h6>
+                        </div>
+                        <div *ngIf="item.price" class="col-sm-6">
+                            <del class="mo-old-price pull-right"> {{item.currency}} {{item.price}} </del>
+                        </div>
+                    </div>
+                    <div class="text-center row">
+                        <h6>*price include tax</h6>
+                        <div class="text-center col-sm-12 col-xs-12 ">
+                            <button (click)="addToCart(item)" *ngIf="!isInCart(item)" class="btn mo-add-btn">Add to cart <i class="fa fa-shopping-cart"></i></button>
+                            <button *ngIf="isInCart(item)" class="btn mo-add-btn-in-cart ">Added to cart <i class="fa fa-check-square-o" aria-hidden="true"></i></button>
+                        </div>
+                    </div>
+                </div>
+    </div>
+</div>
+<!--@todo-->
+<!--{{ page }}-->

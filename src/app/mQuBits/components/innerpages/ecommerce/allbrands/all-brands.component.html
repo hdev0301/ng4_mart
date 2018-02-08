@@ -1,0 +1,13 @@
+<div *ngFor="let key of keys; let i = index">
+    <h1 [innerHtml]="key"></h1>
+    <div class="container mq-brand-container">
+        <div *ngFor="let brand of brands[key]; let j = nestedIndex" class="mq-brand-div">
+            <a *ngIf="brand.slug" [routerLink]="['/brands', brand.slug]" (click)="setBrand(brand)">
+                <img *ngIf="brand.brand_image" [src]="brand.brand_image" class="mq-brand-image" />
+            </a>
+            <a *ngIf="brand.slug" [routerLink]="['/brands', brand.slug]" (click)="setBrand(brand)">
+                <span *ngIf="brand.label" [innerHtml]="brand.label"></span>
+            </a>
+        </div>
+    </div>
+</div>

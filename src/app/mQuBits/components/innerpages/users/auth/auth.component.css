@@ -1,0 +1,216 @@
+input[type="email"]:focus {
+border-bottom: #F4C20D solid 1px;
+}
+
+input[type="password"]:focus {
+border-bottom: #F4C20D solid 1px;
+}
+
+#reg-box
+{
+  padding-left: 3em;
+  padding-right: 3em;
+  padding-top: 2em; 
+  padding-bottom: 2em; 
+  border: 1px solid #eaeaea;
+  background-color: white;
+  width: 75%;
+}
+
+.frm-ctrl
+{
+  height: 40px;
+  border-bottom: #aaa solid 1px;
+  border-top: white solid 1px;
+  border-left: white solid 1px;
+  border-right: white solid 1px;
+  box-shadow: 0;
+  outline: none;
+  -webkit-box-shadow: none !important;
+  -moz-box-shadow: none !important;
+  box-shadow: none !important;
+  color: #181818;
+  font-weight: 300;
+}
+
+.form-control[disabled], .form-control[readonly], fieldset[disabled] .form-control {
+background : none;
+background-color: #eee;
+opacity: 1;
+}
+
+.signUp, .signIn
+{
+  width: 10em;
+  font-weight: bold;
+  color: white;
+  background-color: #00a3ff;
+  padding: 0.5em;
+}
+
+.fb-social-btn, .g-social-btn
+{
+  padding: 0.5em;
+  font-size: medium;
+}
+
+.reg-txt
+{
+padding-top: 1em;
+}
+
+/* Small only */
+@media screen and (max-width: 39.9375em)
+{
+  #reg-box
+  {
+    padding-left: 0.75em;
+    padding-right: 0.25em;
+    width: auto;
+    margin: 0;
+  }
+
+  .padding-0
+  {
+   padding: 0;
+   margin: 0;
+  }
+
+  .checkbox-inline
+  {
+  padding: 0;
+  }
+}
+
+/* Medium only */
+@media screen and (min-width: 40em) and (max-width: 63.9375em) 
+{
+}
+
+.footer-txt
+{
+color:#575757; 
+line-height: 2.5;
+}
+
+.logo
+{
+height: 5em;
+width: 13em;
+}
+
+.slogin
+{
+line-height:3;
+font-size: medium;
+color: #575757; 
+}
+
+.small-logo
+{
+padding: 0;
+}
+
+.header-txt
+{
+font-size: large;
+color: #5163E8; 
+font-weight:bold;
+}
+
+.forgot-txt
+{
+line-height: 1;
+color: #00a3ff;
+}
+
+.login-or {
+position: relative;
+font-size: 18px;
+color: #aaa;
+margin-top: 10px;
+margin-bottom: 10px;
+padding-top: 10px;
+padding-bottom: 10px;
+}
+.span-or {
+display: block;
+position: absolute;
+left: 50%;
+top: -2px;
+margin-left: -25px;
+background-color: #fff;
+width: 50px;
+text-align: center;
+}
+.hr-or {
+background-color: #cdcdcd;
+height: 1px;
+margin-top: 0px !important;
+margin-bottom: 0px !important;
+}
+
+.fb-social-btn
+{
+background-color: #3b5998;
+color: white;
+}
+
+.fb-social-btn:hover
+{
+background-color: #00a3ff;
+}
+
+.g-social-btn
+{
+background-color: #d34836;
+color: white
+}
+
+.g-social-btn:hover
+{
+background-color: #DC4937;
+}
+
+.myCheckbox input {
+position: relative;
+z-index: -9999;
+}
+
+.myCheckbox span {
+width: 20px;
+height: 20px;
+display: block;
+}
+
+
+.input-group-addon
+{
+border: none;
+background-color:white;
+color: #F4C20D;
+font-size: large; 
+}
+
+.btn-top
+{
+top:1em;
+}
+
+.checkbox-inline
+{
+padding-top: 5px;
+padding-bottom: 5px;
+margin-left: 1em;
+padding-left: 1em;
+}
+
+
+/* validation*/
+.ng-valid[required], .ng-valid.required  {
+  border-left: 5px solid #42A948; /* green */
+}
+
+.ng-invalid:not(form)  {
+  border-left: 5px solid#F4C20D; /* red */
+}

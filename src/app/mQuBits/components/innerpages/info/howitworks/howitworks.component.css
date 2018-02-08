@@ -1,0 +1,115 @@
+/* how it works */
+.how-it-works-txt
+{
+    font-size: larger;
+    font-weight: bold;
+    padding: 1em;
+}
+
+.how-it-works-btn
+{
+    border: #4492f7 solid 2px;
+    border-radius: 10px;
+    color: #4492f7;
+}
+
+.how-it-works-btn-size
+{
+    width: 10em;
+    padding: 0.25em;
+}
+
+.how-it-works-image
+{
+    height: 10em;
+    width:10em;
+}
+
+.select-image
+{
+    /* background: url('./assets/images/martmax.png') no-repeat -286px -1404px; */
+}
+
+.calculate-image
+{
+    /* background: url('./assets/images/martmax.png') no-repeat -587px -1403px; */
+}
+
+.pay-image
+{
+    /* background: url('./assets/images/martmax.png') no-repeat -885px -1394px; */
+}
+
+.deliver-image
+{
+    /* background: url('./assets/images/martmax.png') no-repeat -1170px -1396px; */
+	width: 164px;
+	height: 133px;
+}
+
+.selected-btn
+{
+    color: white;
+}
+
+.how-it-works-content
+{
+    padding: 3em;
+}
+
+.how-it-works-block
+{
+    background-color: #d1eae2;
+    margin-top: 0.1em;
+    font-weight: bolder;
+    color: #01449b;
+    padding: 3em;
+}
+
+.how-it-works-brand
+{
+    background-color: white;
+    border-radius: 10px;
+    color: #4492f7;
+    padding: 0.75em;
+    width: 12em;
+    height: 4em;
+}
+
+.line
+{
+    color: #4492f7;  
+    height: 5em;
+}
+
+.amazon-logo
+{
+    /* background: url('./assets/images/martmax.png') no-repeat -556px -1885px; */
+    width: 91px;
+    height: 28px;    
+}
+
+.ebay-logo
+{
+    /* background: url('./assets/images/martmax.png') no-repeat -764px -1880px; */
+    width: 73px;
+    height: 31px;    
+}
+
+.ali-logo
+{
+    /* background: url('./assets/images/martmax.png') no-repeat -926px -1879px; */
+    width: 147px;
+    height: 34px;
+}
+
+.hide-content
+{
+    display: none;
+}
+
+.show-content
+{
+    display: block;
+}
+

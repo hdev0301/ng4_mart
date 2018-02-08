@@ -1,0 +1,85 @@
+<div class="container-fluid tableBox">
+    <h1 class="text-center cart-txt">My Cart <span class="badge">{{totalItems}}</span></h1>
+    <div class="product">
+
+        <table class="table table-responsive ">
+            <thead>
+                <tr>
+                    <th class="text-left">
+                        Item
+                    </th>
+
+                    <th class="text-center">
+                        Quantity
+                    </th>
+
+                    <th class="text-center">
+                        Unit price
+                    </th>
+
+                    <th class="text-center">
+                        Subtotal
+                    </th>
+                </tr>
+            </thead>
+            <tbody class="table-bordered">
+                <tr *ngFor="let item of items">
+                    <td>
+                        <ul class="list-unstyled list-inline">
+                            <li>
+                                <div class="imgBox">
+                                    <img [src]="item.images.medium.url" class="img-circle img-responsive  itm-img">
+                                </div>
+                            </li>
+
+                            <li>
+                                <h4 [innerHtml]="item.category"></h4>
+                                <h6 [innerHtml]="item.title"></h6>
+                                <button (click)="removeFromCart(item)" class="btn btn-info rm">remove</button>
+                            </li>
+                        </ul>
+                    </td>
+
+                    <td class="qty text-center borderLeft">
+                        <input type="number" class="qty form-control" min=1 max=1 value=1>
+                    </td>
+
+                    <td class="blueColor text-center borderLeft">{{item.currency}} {{item.price}}</td>
+                    <td class="blueColor text-center borderLeft">{{item.currency}} {{item.price}}</td>
+                </tr>
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td>
+                        <ul class="list-unstyled list-inline row">
+                            <!--<li class="col-sm-6">
+                                    <p class="couponBox">Do you have coupon code</p>
+                                    <div class="form-inline borderCoupon">
+                                        <input type="text" class="form-control codetxt" placeholder="place your code here">
+                                        <input type="button" class="btn btn-primary btnCoupon codebtn" value="Use">
+                                    </div>
+                                </li>-->
+                            <li class="pull-right">
+                                <p>Subtotal</p>
+                                <p class="price">USD {{sum}}</p>
+                                <p class="btn-primary btn-lg total">Total: USD {{sum}}</p>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+
+                    </td>
+                </tr>
+            </tfoot>
+        </table>
+        <div class="center-block">
+            <a routerLink="/checkout" routerLinkActive="active">
+            <button class="btn btn-primary gradient btncheckout btn-lg center-block">Continue to checkout</button>
+         </a>
+        </div>
+        <div>
+        </div>
+    </div>
+</div>

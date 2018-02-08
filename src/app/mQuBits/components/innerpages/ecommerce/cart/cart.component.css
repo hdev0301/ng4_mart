@@ -1,0 +1,132 @@
+
+/*
+Product css
+*/
+.product
+{
+padding: 5%;
+}
+
+table
+{
+padding: 50px;
+background-color: white;
+border-radius: 10px;
+}
+
+thead
+{
+    background-color: #3278f7;
+    color: white;
+    border-radius: 25px;
+}
+
+.imgBox
+{
+    border: black solid spx;
+    height: 100%;
+    width: 100%;
+}
+
+.rm
+{
+    background-color: white;
+    border: red solid 1px;
+    border-radius: 25px;
+    color: red;
+}
+
+tbody tr td img
+{
+    width: 150px;
+    height: 150px;
+}
+
+.blueColor
+{
+    color: #2187d9;
+}
+
+.qty
+{
+    border-radius: 25px;
+    width: 60px;
+    margin: 0 auto;
+}
+
+.tableBox
+{
+    padding-top: 10px;
+    padding-bottom: 10px;
+    background-color: #F8F8F8;
+}
+
+.btncheckout
+{
+    width: 15em;
+}
+
+.borderLeft
+{
+    border-left: #eaeaea solid 2px;
+}
+
+.btnCoupon
+{
+    margin-left: -13px;
+}
+
+.borderCoupon
+{
+    border-radius: 25px;
+}
+
+.total
+{
+    background-color: #1afdbf;
+    height: 50px;
+}
+
+.codetxt, .codebtn
+{
+    height: 50px;
+}
+
+.codetxt
+{
+    background-color: #ecedec;
+}
+.couponBox
+{
+    margin-top: 30px;
+    color: #3278f7;
+}
+
+.price
+{
+     color: #3278f7;
+}
+
+.cart-txt
+{
+    color:black;
+}
+
+.itm-img
+{
+border-color: gray;
+}
+
+/* for small devices*/
+@media screen and (max-width: 39.9375em) 
+{
+    .product
+    {
+    padding: 0;
+    }
+
+    .btncheckout
+    {
+        width: 12em;
+    }
+}

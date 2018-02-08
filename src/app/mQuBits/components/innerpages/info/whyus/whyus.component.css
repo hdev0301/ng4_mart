@@ -1,0 +1,57 @@
+/*why us*/
+.why-us-image
+{
+    width: 12em;
+    height: 12em;
+    border: white solid 2px;
+}
+
+.why-us
+{
+    padding: 3em;
+    background: white;
+    color: white;
+    background: -webkit-linear-gradient(left, #485563 , #29323c); 
+    background: -o-linear-gradient(right, #485563, #29323c);
+    background: -moz-linear-gradient(right, #485563, #29323c); 
+    background: linear-gradient(to right, #485563 , #29323c);
+}
+
+.why-us-txt
+{
+    font-size: larger;
+    font-weight: bold;
+    padding: 1em;
+}
+
+.gaurnteed
+{
+    /* background: url('./assets/images/martmax.png') no-repeat -491px -1690px; */
+    width: 120px;
+    height: 100px; 
+    padding: 5em;
+}
+
+.save-money
+{
+    /* background: url('./assets/images/martmax.png') no-repeat -695px -1691px; */
+    width: 120px;
+    height: 100px; 
+    padding: 5em;
+}
+
+.fast-deliver
+{
+    /* background: url('./assets/images/martmax.png') no-repeat -1012px -1710px; */
+    width: 120px;
+    height: 100px; 
+    padding: 5em;
+}
+
+.home-deliver
+{
+    /* background: url('./assets/images/martmax.png') no-repeat -1386px -1728px; */
+    width: 120px;
+    height: 100px;    
+    padding: 5em;
+}

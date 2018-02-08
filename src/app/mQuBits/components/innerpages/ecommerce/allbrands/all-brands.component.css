@@ -1,0 +1,14 @@
+.mq-brand-image {
+    max-width: 5em;
+    max-height: 5em;
+    vertical-align: middle;
+}
+
+.mq-brand-div {
+    float: left;
+    margin: 2em;
+}
+
+.mq-brand-container {
+    position: relative;
+}

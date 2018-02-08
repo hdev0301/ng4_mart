@@ -1,0 +1,102 @@
+<!-- new -->
+<div class="container-fluid profile-bg">
+
+    <div class="container ">
+        <!-- user name-->
+        <h1 class="text-center"><b style="color: darkslategrey">Hello <span>{{ user?.firstName | json | mQRestify}}</span><span> {{ user?.lastName | json | mQRestify }}</span></b></h1>
+
+        <h4 class="text-center">Here you can find you Official setting</h4>
+        <div class="row">
+            <div class="col-sm-3 well list-color">
+
+                <!--Account -->
+                <h3><b>MY ACCOUNT</b></h3>
+                <ul class="list-unstyled leftlist">
+                    <li><a href="#">Account Dashboard</a></li>
+                    <li><a href="#">Account information</a></li>
+                    <li><a href="#">Change Password</a></li>
+                    <li><a href="#">Address Book</a></li>
+                    <li><a href="#">My Product Reviews</a></li>
+                    <li><a href="#">My Orders</a></li>
+                    <li><a href="#">Newsletter Subscription</a></li>
+                    <li><a href="#">Manage Stored Cards</a></li>
+                    <li><a href="#">Affiliate </a></li>
+                    <li><a href="#">My Credit EGP 00.0</a></li>
+                    <li><a href="#">My Tickets</a></li>
+                </ul>
+                <hr>
+                <h3 style="color: black"><b>MY CART</b></h3>
+                <h4>you have no Items</h4>
+            </div>
+            <div class="col-sm-7">
+
+                <!-- Account information-->
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div class="panel panel-default text-left borderRadius">
+                            <div class="panel-body">
+                                <button type="button" class="btn btn-link pull-right btn-lg">
+                                            <span class="glyphicon glyphicon-edit"></span> Edit
+                                        </button>
+                                <h2 class=""><b>Account information</b></h2>
+                                <h3 class=""><b>Contact information</b></h3>
+                                <h3>User name:<span><span>{{ user?.firstName | json | mQRestify}}</span><span> {{ user?.lastName | json | mQRestify }}</span></span>
+                                </h3>
+                                <h3>Email:<span>{{ user?.email | json | mQRestify }}</span></h3>
+                                <h3>Mobile:<span>{{ user?.mobile | json | mQRestify }}</span></h3>
+                                <h3>Address:<span>{{ user?.address | json | mQRestify }}</span></h3>
+                                <h3>District:<span>{{ user?.district | json | mQRestify }}</span></h3>
+                                <h3>City:<span>{{ user?.city | json | mQRestify }}</span></h3>
+                                <h3>State:<span>{{ user?.state | json | mQRestify }}</span></h3>
+                                <h3>Country:<span>{{ user?.country | json | mQRestify }}</span></h3>
+                                <h3>Birthdate:<span>{{ user?.birthdate | json | mQRestify }}</span></h3>
+                                <h3>Gender:<span>{{ user?.gender | json | mQRestify }}</span></h3>
+                                <button class="btn btn-primary pull-right gradient btnWidth btn-lg">Change Password</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <!-- Address book-->
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div class="panel panel-default text-left borderRadius">
+                            <div class="panel-body">
+                                <button type="button" class="btn btn-link pull-right btn-lg">
+                                            <span class="glyphicon glyphicon-edit"></span> Edit
+                                        </button>
+                                <h2 class=""><b>Address book</b></h2>
+                                <h2 class=""><b>Default billing address</b></h2>
+                                <h4>You are not set default billing address</h4>
+                                <button type="button" class="btn btn-link  btn-lg"><span class="glyphicon glyphicon-edit"></span> Edit billing address</button>
+
+                                <h2 class=""><b>Default shipping address</b></h2>
+                                <h4>You are not set default shipping address</h4>
+                                <button type="button" class="btn btn-link  btn-lg"><span class="glyphicon glyphicon-edit"></span> Edit shipping address</button>
+                                <button class="btn btn-primary pull-right gradient btnWidth btn-lg">Change Addresses</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div class="panel panel-default text-left borderRadius">
+                            <div class="panel-body">
+                                <h2 class="">
+                                    <b>Newsletters</b>
+                                </h2>
+                                <button type="button" class="btn btn-link pull-right btn-lg">
+                                            <span class="glyphicon glyphicon-edit"></span> Edit
+                                 </button>
+                                <h4>You are not subscribed for newsletter</h4>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>

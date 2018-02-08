@@ -1,0 +1,352 @@
+<!-- start category menu  section -->
+<section class="cat-menu hidden-sm hidden-xs">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12" style="padding:5px">
+                <ul>
+                    <li>
+                        <a href="#">Prime</a>
+                    </li>
+                    <li>
+                        <a href="#">App</a>
+                    </li>
+                    <li>
+                        <a href="#">Trending Now</a>
+                    </li>
+                    <li>
+                        <a href="#">Under RM30</a>
+                    </li>
+                    <li>
+                        <a href="#">Featured Brands</a>
+                    </li>
+                    <li>
+                        <a href="#">Local</a>
+                    </li>
+                    <li>
+                        <a href="#">USA</a>
+                    </li>
+                    <li>
+                        <a href="#">Free Shipping</a>
+                    </li>
+                    <li>
+                        <a href="#">Prime Wishlist</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- end category menu  section -->
+<div class="bread">
+    <div class="container">
+        <ul>
+            <li>
+                <a href="#">All Category</a>
+            </li>
+            <li>
+                <a href="#">Women's Clothing</a>
+            </li>
+            <li>
+                <a href="#">Coats & Jackets</a>
+            </li>
+            <li>Vests</li>
+
+        </ul>
+    </div>
+</div>
+
+<!-- section single page -->
+<section class="single-product" *ngIf="item">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4">
+                <article>
+                    <div class="simpleLens-gallery-container" id="demo-1">
+                        <div class="simpleLens-container">
+                            <div class="simpleLens-big-image-container">
+                                <a class="simpleLens-lens-image" data-lens-image="./assets/images/large/benvado_elisa_bianco.jpg">
+                                    <img src="./assets/images/medium/benvado_elisa_bianco.jpg" class="simpleLens-big-image">
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="simpleLens-thumbnails-container">
+                            <a href="#" class="simpleLens-thumbnail-wrapper" data-lens-image="./assets/images/large/benvado_elisa_bianco.jpg" data-big-image="./assets/images/medium/benvado_elisa_bianco.jpg">
+                                <img src="./assets/images/thumbnail/benvado_elisa_bianco.jpg">
+                            </a>
+
+                            <a href="#" class="simpleLens-thumbnail-wrapper" data-lens-image="./assets/images/large/camper_21926_red.jpg" data-big-image="./assets/images/medium/camper_21926_red.jpg">
+                                <img src="./assets/images/thumbnail/camper_21926_red.jpg">
+                            </a>
+
+                            <a href="#" class="simpleLens-thumbnail-wrapper" data-lens-image="./assets/images/large/flylondon_most_red.jpg" data-big-image="./assets/images/medium/flylondon_most_red.jpg">
+                                <img src="./assets/images/thumbnail/flylondon_most_red.jpg">
+                            </a>
+                        </div>
+                    </div>
+                    <a [href]="item.url" target="_blank" class="other-item pull-left">
+                        <i class="fa fa-link"></i> Reference link
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+                </article>
+            </div>
+            <div class="col-md-8 item-details">
+                <span class="fast-deliver">
+                    <img src="./assets/images/fast.png" alt="" /> Fast delivery: delivered in 6-16 working days</span>
+                <h3>{{item.title}}</h3>
+                <!-- <select name="" id="" class="form-control">
+                    <option>English</option>
+                </select> -->
+                <p>Product from
+                    <b *ngIf="item.store" [innerHTML]="item.store"></b>
+                </p>
+                <div class="item-pr">
+                    <span class="final-price" [ngClass]="originalPriceClass" *ngIf="originalPrice"> {{originalPrice}} {{item.currency}}</span>
+                    <span class="item-pre" *ngIf="displayPriceRange"> {{lowestPrice}} - {{maxPrice}} {{item.currency}}</span>
+                    <span class="item-off" *ngIf="offerPrice">{{offerPrice}} {{item.currency}}</span>
+                </div>
+                <div class="customs row">
+                    <span class="col-xs-6">Imported from
+                        <span class="money">USA</span>
+                    </span>
+                    <span class="col-xs-6">VAT on Customs : The price includes everything except the home delivery</span>
+                    <span class="col-xs-6">image here
+                        <span class="money">100% Genuine</span>
+                    </span>
+                    <!--
+                         @todo change prime or fast delivery from backend and flag  
+                     -->
+                    <!-- <span class="col-xs-6">Fast delivery: delivered in 6-16 working days</span> -->
+                    <span class="col-xs-6">Fast delivery: delivered in 6-16 working days</span>
+                </div>
+                <div class="hidden-sm hidden-xs">
+                    <div class="sizes row" *ngIf="sizes && sizes.length > 0">
+                        <!-- <label class="col-xs-3" *ngIf="selectedSize">{{ selectedSize }}</label> -->
+                        <span class="col-xs-9">
+                            <button class="btn" *ngFor="let size of sizes" value="{{size}}" (click)="changeSize($event, size)">{{size}}</button>
+                        </span>
+                    </div>
+                    <div class="colors row" *ngIf="colors && colors.length > 0 && mapIteratorLoaded === true && colorsImages">
+                        <!-- <label class="col-xs-3" *ngIf="selectedColor">Selected color: {{ selectedColor }}</label> -->
+                        <img *ngFor="let key of colorsImages;let i = index" [src]="key" [alt]="colors[i]" (click)="changeColor($event, colors[i])"
+                            class="mq-sku-img img-responsive" />
+                    </div>
+                    <div class="qut row">
+                        <label class="col-xs-3">QTY : </label>
+                        <span class="col-xs-9">
+                            <span class="plus">
+                                <i class="fa fa-minus" (click)="decrement()"></i>
+                            </span>
+                            <input type="text" [value]="counter" />
+                            <span class="plus">
+                                <i class="fa fa-plus" (click)="increment()"></i>
+                            </span>
+                        </span>
+                    </div>
+                    <div class="available row">
+                        <label class="col-xs-3">Available for:</label>
+                        <span class="col-xs-9">
+                            <span class="prime">Prime</span>
+                        </span>
+                    </div>
+                </div>
+                <!--  (click)="addToCart(item)" *ngIf="!isInCart(item)" -->
+                <div class="add">
+                    <button (click)="addToCart(item)" *ngIf="!isInCart(item)" class="btn btn-default">ADD TO CART</button>
+                    <button (click)="!addToCart(item)" *ngIf="isInCart(item)" class="btn btn-default">ADDED TO CART</button>
+                    <!--   <a href="#"><i class="fa fa-heart-o"></i> </a> -->
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- if item not found-->
+<section class="loader-content" *ngIf="! item">
+    <img class="martmax-logo-loader center-block" src="./assets/images/martmax-small-logo.png">
+</section>
+
+<section class="product-details">
+    <div class="container">
+        <div class="">
+            <div class="similar-products row">
+                <h3>similar
+                    <span>items</span>
+                </h3>
+                <div class="owl-carousel">
+                    <div>
+                        <div class="thumbnail">
+                            <a href="#">
+                                <img src="./assets/images/medium/benvado_elisa_bianco.jpg" alt="...">
+                                <div class="caption">
+                                    <p class="product-name">Women Summer Cardigan Jacket Shawl Long</p>
+                                    <p class="price">1300-2600 EGP</p>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="thumbnail">
+                            <a href="#">
+                                <img src="./assets/images/medium/camper_21926_red.jpg" alt="...">
+                                <div class="caption">
+                                    <p class="product-name">Women Summer Cardigan Jacket Shawl Long</p>
+                                    <p class="price">1300-2600 EGP</p>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="thumbnail">
+                            <a href="#">
+                                <img src="./assets/images/medium/flylondon_most_red.jpg" alt="...">
+                                <div class="caption">
+                                    <p class="product-name">Women Summer Cardigan Jacket Shawl Long</p>
+                                    <p class="price">1300-2600 EGP</p>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="thumbnail">
+                            <a href="#">
+                                <img src="./assets/images/medium/benvado_elisa_bianco.jpg" alt="...">
+                                <div class="caption">
+                                    <p class="product-name">Women Summer Cardigan Jacket Shawl Long</p>
+                                    <p class="price">1300-2600 EGP</p>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="thumbnail">
+                            <a href="#">
+                                <img src="./assets/images/medium/camper_21926_red.jpg" alt="...">
+                                <div class="caption">
+                                    <p class="product-name">Women Summer Cardigan Jacket Shawl Long</p>
+                                    <p class="price">1300-2600 EGP</p>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="thumbnail">
+                            <a href="#">
+                                <img src="./assets/images/medium/flylondon_most_red.jpg" alt="...">
+                                <div class="caption">
+                                    <p class="product-name">Women Summer Cardigan Jacket Shawl Long</p>
+                                    <p class="price">1300-2600 EGP</p>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="thumbnail">
+                            <a href="#">
+                                <img src="./assets/images/medium/benvado_elisa_bianco.jpg" alt="...">
+                                <div class="caption">
+                                    <p class="product-name">Women Summer Cardigan Jacket Shawl Long</p>
+                                    <p class="price">1300-2600 EGP</p>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="thumbnail">
+                            <a href="#">
+                                <img src="./assets/images/medium/camper_21926_red.jpg" alt="...">
+                                <div class="caption">
+                                    <p class="product-name">Women Summer Cardigan Jacket Shawl Long</p>
+                                    <p class="price">1300-2600 EGP</p>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="thumbnail">
+                            <a href="#">
+                                <img src="./assets/images/medium/flylondon_most_red.jpg" alt="...">
+                                <div class="caption">
+                                    <p class="product-name">Women Summer Cardigan Jacket Shawl Long</p>
+                                    <p class="price">1300-2600 EGP</p>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="discription">
+                    <h3>description</h3>
+                    <p>any thing here</p>
+                </div>
+                <h3>similar
+                    <span>items</span>
+                </h3>
+                <div class="owl-carousel">
+                    <div>
+                        <div class="thumbnail">
+                            <a href="#">
+                                <img src="./assets/images/medium/benvado_elisa_bianco.jpg" alt="...">
+                            </a>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="thumbnail">
+                            <a href="#">
+                                <img src="./assets/images/medium/camper_21926_red.jpg" alt="...">
+                            </a>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="thumbnail">
+                            <a href="#">
+                                <img src="./assets/images/medium/flylondon_most_red.jpg" alt="...">
+                            </a>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="thumbnail">
+                            <a href="#">
+                                <img src="./assets/images/medium/benvado_elisa_bianco.jpg" alt="...">
+                            </a>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="thumbnail">
+                            <a href="#">
+                                <img src="./assets/images/medium/camper_21926_red.jpg" alt="...">
+                            </a>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="thumbnail">
+                            <a href="#">
+                                <img src="./assets/images/medium/flylondon_most_red.jpg" alt="...">
+                            </a>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="thumbnail">
+                            <a href="#">
+                                <img src="./assets/images/medium/benvado_elisa_bianco.jpg" alt="...">
+                            </a>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="thumbnail">
+                            <a href="#">
+                                <img src="./assets/images/medium/camper_21926_red.jpg" alt="...">
+                            </a>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="thumbnail">
+                            <a href="#">
+                                <img src="./assets/images/medium/flylondon_most_red.jpg" alt="...">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

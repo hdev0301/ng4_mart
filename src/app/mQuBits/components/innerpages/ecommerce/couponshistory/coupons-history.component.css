@@ -1,0 +1,183 @@
+.livecoupon-container {
+    text-align: center;
+    background-color: #F4C20D;
+}
+
+.livecoupon-title {
+    color: #db323b;
+    font-size: 2em;
+    text-align: center;
+    padding: 0.5em;
+}
+
+.countdown-div {
+    margin: auto;
+    text-align: center;
+    color: white;
+    font-size: 1.5em;
+}
+
+.time-div {}
+
+.time {
+    display: inline-block;
+    text-align: center;
+    padding: 0 0.3em;
+}
+
+.progress-bar-div {
+    padding: 1em;
+}
+
+.progress-div {
+    margin: auto;
+    width: 30%;
+}
+
+.livecoupon-code-div {
+    background-color: white;
+    margin: 0;
+    color: #9d9d9d;
+    padding: 1em;
+}
+
+.abovecode-text {
+    padding: 1em;
+    margin: 0;
+}
+
+.livecoupon-code {
+    background-color: #e5e5e5;
+    border-color: black;
+    padding: 1em 3em;
+    margin: auto;
+    display: table;
+    border: 1px;
+    border-style: solid;
+    color: black;
+    font-size: 2em;
+}
+
+.livecopy-button-div {
+    padding: 1em;
+}
+
+.livecopy-button {
+    border: none;
+    color: #db323b;
+    background-color: #f4c20d;
+    padding: 1em 4em;
+}
+
+.livecopy-button:hover {
+    background-color: #0097df;
+    cursor: pointer;
+}
+
+.terms-div {
+    background-color: #e5e5e5;
+    padding: 1em;
+}
+
+.terms {
+    font-size: 1.5em;
+    color: black;
+}
+
+.list-of-conditions {
+    text-align: left;
+    color: black;
+    padding: 1em;
+}
+
+.single-coupon-container {
+    padding: 1em;
+}
+
+.single-coupon {
+    background-color: #f2e6ff;
+    text-align: center;
+    border: 1px solid #d5d8db;
+    border-radius: 0.5em;
+}
+
+.single-coupon:hover {
+    box-shadow: 2px 2px #d5d8db;
+}
+
+.coupon-first-section {
+    height: 50%;
+    padding: 0.5em;
+    border-radius: 0.5em;
+    background-color: white;
+}
+
+.coupon-second-section {
+    height: 50%;
+    padding: 0.5em;
+}
+
+.coupon-banner {
+    width: 80%;
+}
+
+.coupon-title {
+    font-size: 1.5em;
+    margin: 0;
+}
+
+.off-percentage {
+    color: #05abdb;
+    text-align: center;
+    font-size: 2em;
+    margin: 0;
+}
+
+.coupon-expire-date {
+    font-size: 0.9em;
+    margin: 0;
+}
+
+.div-code {
+    background-color: #e5e5e5;
+    width: 80%;
+    margin: auto;
+    border-radius: 1em;
+}
+
+.code {
+    font-size: 1.5em;
+    padding: 0.5em;
+}
+
+.copy-button {
+    width: 45%;
+    border: none;
+    color: #db323b;
+    background-color: #f4c20d;
+    padding: 0.5em;
+    float: right;
+}
+
+.coupon-button-div {
+    margin: 0;
+}
+
+.coupon-button {
+    width: 45%;
+    border: none;
+    color: #db323b;
+    background-color: #f4c20d;
+    padding: 0.5em;
+    float: left;
+}
+
+.copy-button:hover {
+    background-color: #0097df;
+    cursor: pointer;
+}
+
+.coupon-button:hover {
+    background-color: #0097df;
+    cursor: pointer;
+}
